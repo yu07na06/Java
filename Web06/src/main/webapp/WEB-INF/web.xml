@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+
+	<!-- 프로젝트 이름 명시 : 의미 없음.. -->
+	<display-name>Web06</display-name>
+	
+	<!-- 누구나 이렇게 사용한다. -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 서블릿으로 사용할 클래스 설정 -->
+	<servlet> 
+		<servlet-name>world</servlet-name> <!-- 서블릿 이름 명시 -->
+		<servlet-class>Pack.WorldServlet</servlet-class> <!-- 해당 클래스를 world라고 하겠다. 서블릿 이름을 정해준 것 뿐 -->
+	</servlet>
+	<!-- 실질적인 매핑 -->
+	<servlet-mapping>
+		<servlet-name>world</servlet-name>
+		<url-pattern>/world</url-pattern> <!-- url 패턴을 다음과 같이 사용하면, world 재를 쓰겠다. -->
+	</servlet-mapping>
+
+</web-app>
