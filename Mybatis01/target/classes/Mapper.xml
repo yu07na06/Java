@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="Mapper">
+	<select id="test01" resultType="int">
+		SELECT age FROM table01
+	</select>
+
+	<insert id="test02" parameterType="int">
+		INSERT INTO table01(age) VALUES (#{age})
+	</insert>
+	
+	<delete id="test03" parameterType="int">
+		DELETE FROM table01 WHERE age = #{age}
+	</delete>
+	
+	<update id="test04" parameterType="int">
+		UPDATE table01 SET age = 777 WHERE age = #{age}
+	</update>
+	
+	<insert id="test05" parameterType="Pack.Person">
+		INSERT INTO table01(fullname, age) 
+		VALUES (#{name}, #{age})
+	</insert>
+	
+	<delete id="test06" parameterType="Pack.Person">
+		DELETE FROM table01 
+		WHERE fullname = #{name}
+	</delete>
+	
+		<update id="test07" parameterType="Pack.Person">
+		UPDATE table01 SET age = 20 
+		WHERE fullname = #{name}
+	</update>
+	
+	<select id="test08" resultType="Pack.Person">
+		SELECT * FROM table01
+	</select>
+</mapper>
